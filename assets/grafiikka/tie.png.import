@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1bhi765y4lfg"
-path.s3tc="res://.godot/imported/hytti.png-23f7ba8c24ec4e6fbf93e68a26f030b0.s3tc.ctex"
+uid="uid://bib2wdai3h24a"
+path.s3tc="res://.godot/imported/tie.png-05febe83ed3a3823d757f5dfca53b691.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/grafiikka/hytti.png"
-dest_files=["res://.godot/imported/hytti.png-23f7ba8c24ec4e6fbf93e68a26f030b0.s3tc.ctex"]
+source_file="res://assets/grafiikka/tie.png"
+dest_files=["res://.godot/imported/tie.png-05febe83ed3a3823d757f5dfca53b691.s3tc.ctex"]
 
 [params]
 

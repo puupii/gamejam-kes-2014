@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dl0t1kyqo8is3"]
+
+[ext_resource type="Texture2D" uid="uid://bib2wdai3h24a" path="res://assets/grafiikka/tie.png" id="1_ipuoa"]
+[ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_pdxdr"]
+[ext_resource type="Script" path="res://scriptit/Hytti.gd" id="2_telbs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vrej"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ha800"]
+sky_material = SubResource("ProceduralSkyMaterial_2vrej")
+
+[sub_resource type="Environment" id="Environment_glhqf"]
+background_mode = 2
+sky = SubResource("Sky_ha800")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kep12"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_glhqf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 802.0
+offset_bottom = 600.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(800, 600)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.305776)
+mesh = SubResource("PlaneMesh_kep12")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -9.20406)
+
+[node name="Tie" type="Sprite2D" parent="."]
+position = Vector2(438, 472)
+texture = ExtResource("1_ipuoa")
+
+[node name="Hytti" type="Sprite2D" parent="."]
+position = Vector2(408, 289)
+texture = ExtResource("1_pdxdr")
+script = ExtResource("2_telbs")
