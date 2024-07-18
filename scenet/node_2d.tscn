@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ru01f8507vq"]
+
+[ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_mxoy2"]
+[ext_resource type="Script" path="res://scriptit/Hytti.gd" id="2_qjsbc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="ParallaxBackground" parent="."]
+
+[node name="Hytti" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+texture = ExtResource("1_mxoy2")
+script = ExtResource("2_qjsbc")
