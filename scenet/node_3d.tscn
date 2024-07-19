@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgsrk750rvpyx"]
+[gd_scene load_steps=9 format=3 uid="uid://dgsrk750rvpyx"]
 
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_pdxdr"]
-[ext_resource type="Texture2D" uid="uid://dvu6bysr7cnk4" path="res://assets/grafiikka/tie2.png" id="2_4cb0d"]
-[ext_resource type="Script" path="res://scriptit/Tausta.gd" id="3_tai2o"]
+[ext_resource type="ArrayMesh" uid="uid://bl1sdkfeiygqm" path="res://assets/grafiikka/tiePalaPerus.obj" id="2_3fer3"]
+[ext_resource type="Script" path="res://scriptit/OhjaamoView.gd" id="2_o0hu1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vrej"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,16 +18,11 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_l6hbu"]
+size = Vector2(3.2, 2.4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fa6gn"]
 transparency = 1
 albedo_texture = ExtResource("1_pdxdr")
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_le1cx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jq0h"]
-albedo_texture = ExtResource("2_4cb0d")
-uv1_scale = Vector3(2.3, 2.3, 2.3)
 
 [node name="Node3D" type="Node3D"]
 
@@ -38,17 +33,15 @@ environment = SubResource("Environment_glhqf")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -1.77636e-15, 8.74228e-08, 1.83001e-08, 0.977845, 0.209328, -8.5486e-08, 0.209328, -0.977845, 0, 1.31378, -4.3884)
-
 [node name="OhjaamoView" type="MeshInstance3D" parent="."]
-transform = Transform3D(-5, 4.40648e-15, -4.37114e-07, -8.55909e-08, 4.90321, 0.979046, 4.28652e-07, 0.979046, -4.90321, 0, 0.115744, -2.21301)
+transform = Transform3D(-5, -9.38638e-08, 4.26917e-07, 5.31345e-08, 4.71664, 1.65932, -4.33872e-07, 1.65932, -4.71664, 0, 6.57446, -2.94172)
 mesh = SubResource("QuadMesh_l6hbu")
 surface_material_override/0 = SubResource("StandardMaterial3D_fa6gn")
+script = ExtResource("2_o0hu1")
 
-[node name="Tausta" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.18557e-06, 50, -2.18557e-06, 0, -2.18557e-06, -50, -50, -2.18557e-06, 9.55343e-14, 11.504, -23.8535, 36.7598)
-lod_bias = 0.001
-mesh = SubResource("CylinderMesh_le1cx")
-surface_material_override/0 = SubResource("StandardMaterial3D_5jq0h")
-script = ExtResource("3_tai2o")
+[node name="Camera3D" type="Camera3D" parent="OhjaamoView"]
+transform = Transform3D(0.2, -4.70253e-09, -6.44253e-10, 4.73117e-09, 0.199688, 0.0111713, 3.80584e-10, -0.0111713, 0.199688, 1.20531e-07, 0.338086, 1.48598)
+
+[node name="TiePalaPerus" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88342, -0.0719223, 42.2685)
+mesh = ExtResource("2_3fer3")
