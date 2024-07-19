@@ -8,8 +8,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xjrvn"]
 shader = ExtResource("1_0lqhk")
-shader_parameter/offset = 2.08165e-12
-shader_parameter/tiling = Vector2(67, 16)
+shader_parameter/offset = 4.0
+shader_parameter/tiling = Vector2(65, 15)
 shader_parameter/noise = ExtResource("2_n1kpf")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n6gj3"]

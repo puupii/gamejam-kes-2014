@@ -1,11 +1,12 @@
 shader_type canvas_item;
 
 void vertex() {
+	VERTEX = UV;
 	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
-	COLOR.a=COLOR.a*0.1*sin(TIME/6000.0)*sin(TIME);
+	COLOR.a=COLOR.a*0.1*sin(TIME/6.0)*sin(TIME);
 	// Called for every pixel the material is visible on.
 }
 
