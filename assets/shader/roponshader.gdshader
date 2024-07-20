@@ -19,11 +19,12 @@ void fragment() {
 	vec2 polaruv = vec2(angle,dist);
 	polaruv *= polaruv*tiling+offset;
 	vec2 noise_uv = polaruv;
-	float noisee = texture(noise,noise_uv).a*tan(TIME*polaruv.x*polaruv.y);
-	
+	float noisee = texture(noise,noise_uv).a*tan(TIME*polaruv.x*polaruv.y+112.2);
+	vec2 shadow = baseuv*0.5;
 	COLOR.a=COLOR.a*sin(baseuv.x*6.7*polaruv.y)/sin(TIME*COLOR.a)*noisee;
-	COLOR.rgb = COLOR.rgb*texture(noise,noise_uv).rgb+min(vec3(0.1,0.0,0.1)*sin(TIME),vec3(0.12,0.0,0.13)/tan(TIME));
+	COLOR.rgb = COLOR.rgb*texture(noise,noise_uv).rgb+min(vec3(0.09,0.08,0.11)*sin(TIME+8.7),vec3(0.12,0.10,0.23)*cos(TIME));
 	
+	_TEXTURE
 	// Called for every pixel the material is visible on.
 }
 
