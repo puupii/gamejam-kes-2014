@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://50sywgyrwp3q"]
+[gd_scene load_steps=3 format=3 uid="uid://dkq0tmw34yxsi"]
 
 [ext_resource type="Script" path="res://scriptit/tie.gd" id="1_fqw18"]
 [ext_resource type="ArrayMesh" uid="uid://bl1sdkfeiygqm" path="res://assets/grafiikka/tiePalaPerus.obj" id="2_dtdcx"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_pdxdr"]
 [ext_resource type="Script" path="res://scriptit/OhjaamoView.gd" id="2_o0hu1"]
-[ext_resource type="PackedScene" path="res://scenet/node_2d.tscn" id="3_xwp8i"]
+[ext_resource type="PackedScene" uid="uid://b5ru01f8507vq" path="res://scenet/node_2d.tscn" id="3_xwp8i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vrej"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -35,7 +35,6 @@ shadow_enabled = true
 
 [node name="OhjaamoView" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5, -9.38638e-08, 4.26917e-07, 5.31345e-08, 4.71664, 1.65932, -4.33872e-07, 1.65932, -4.71664, 0, 6.57446, -2.94172)
-visible = false
 mesh = SubResource("QuadMesh_l6hbu")
 surface_material_override/0 = SubResource("StandardMaterial3D_fa6gn")
 script = ExtResource("2_o0hu1")
