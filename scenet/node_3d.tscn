@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgsrk750rvpyx"]
+[gd_scene load_steps=9 format=3 uid="uid://dgsrk750rvpyx"]
 
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_pdxdr"]
-[ext_resource type="ArrayMesh" uid="uid://bl1sdkfeiygqm" path="res://assets/grafiikka/tiePalaPerus.obj" id="2_3fer3"]
 [ext_resource type="Script" path="res://scriptit/OhjaamoView.gd" id="2_o0hu1"]
-[ext_resource type="PackedScene" uid="uid://b5ru01f8507vq" path="res://scenet/node_2d.tscn" id="3_xwp8i"]
+[ext_resource type="PackedScene" path="res://scenet/node_2d.tscn" id="3_xwp8i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vrej"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,7 +24,7 @@ size = Vector2(3.2, 2.4)
 transparency = 1
 albedo_texture = ExtResource("1_pdxdr")
 
-[node name="Node3D2" type="Node3D"]
+[node name="EtupaneeliNakyma" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_glhqf")
@@ -45,8 +44,4 @@ script = ExtResource("2_o0hu1")
 position = Vector2(36, 152)
 
 [node name="Camera3D" type="Camera3D" parent="OhjaamoView"]
-transform = Transform3D(0.2, -4.70253e-09, -6.44253e-10, 4.73117e-09, 0.199688, 0.0111713, 3.80584e-10, -0.0111713, 0.199688, 1.20531e-07, 0.338086, 1.48598)
-
-[node name="TiePalaPerus" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88342, -0.0719223, 42.2685)
-mesh = ExtResource("2_3fer3")
+transform = Transform3D(0.2, -4.70255e-09, -6.44262e-10, 4.73117e-09, 0.199688, 0.0111713, 3.80585e-10, -0.0111713, 0.199688, 1.29956e-07, -0.735984, 1.36021)

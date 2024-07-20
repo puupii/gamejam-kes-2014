@@ -1,9 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkq0tmw34yxsi"]
+[gd_scene format=3 uid="uid://50sywgyrwp3q"]
 
-[ext_resource type="Texture2D" uid="uid://bib2wdai3h24a" path="res://assets/grafiikka/tie.png" id="1_nymoi"]
-
-[node name="tie" type="Node2D"]
-
-[node name="Tie" type="Sprite2D" parent="."]
-position = Vector2(324, 390)
-texture = ExtResource("1_nymoi")
+[node name="Tie" type="Node3D"]
