@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://50sywgyrwp3q"]
+[gd_scene load_steps=3 format=3 uid="uid://50sywgyrwp3q"]
+
+[ext_resource type="Script" path="res://scriptit/tie.gd" id="1_fqw18"]
+[ext_resource type="ArrayMesh" uid="uid://bl1sdkfeiygqm" path="res://assets/grafiikka/tiePalaPerus.obj" id="2_dtdcx"]
 
 [node name="Tie" type="Node3D"]
+script = ExtResource("1_fqw18")
+
+[node name="TiePalaPerus" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.242527, 0, 0.145937)
+mesh = ExtResource("2_dtdcx")

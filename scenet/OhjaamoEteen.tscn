@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://bev1veuswrls"]
+
+[ext_resource type="PackedScene" uid="uid://50sywgyrwp3q" path="res://scenet/tie.tscn" id="1_4qx7v"]
+[ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_tqj20"]
+[ext_resource type="Script" path="res://scriptit/OhjaamoView.gd" id="2_43p5p"]
+[ext_resource type="PackedScene" path="res://scenet/node_2d.tscn" id="3_5jhfh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vrej"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ha800"]
+sky_material = SubResource("ProceduralSkyMaterial_2vrej")
+
+[sub_resource type="Environment" id="Environment_glhqf"]
+background_mode = 2
+sky = SubResource("Sky_ha800")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_l6hbu"]
+size = Vector2(3.2, 2.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fa6gn"]
+transparency = 1
+albedo_texture = ExtResource("1_tqj20")
+
+[node name="EtupaneeliNakyma" type="Node3D"]
+
+[node name="Tie" parent="." instance=ExtResource("1_4qx7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.58474, 50.9666)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_glhqf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="OhjaamoView" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5, -9.38638e-08, 4.26917e-07, 5.31345e-08, 4.71664, 1.65932, -4.33872e-07, 1.65932, -4.71664, 0, 8.59593, 2.93416)
+visible = false
+mesh = SubResource("QuadMesh_l6hbu")
+surface_material_override/0 = SubResource("StandardMaterial3D_fa6gn")
+script = ExtResource("2_43p5p")
+
+[node name="Node2D" parent="OhjaamoView" instance=ExtResource("3_5jhfh")]
+position = Vector2(15, 9)
