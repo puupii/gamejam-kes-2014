@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cowxpmru85uhp"]
+[gd_scene load_steps=5 format=3 uid="uid://mhwth5i51www"]
 
 [ext_resource type="Texture2D" uid="uid://b44cmgndh342c" path="res://assets/grafiikka/inventory.png" id="1_4w1h6"]
+[ext_resource type="Script" path="res://scriptit/ui.gd" id="1_fxm1a"]
 [ext_resource type="Texture2D" uid="uid://yrf3p78wbngn" path="res://assets/grafiikka/arrow.png" id="2_38lsc"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4kk0n"]
+
 [node name="UI" type="Node2D"]
+script = ExtResource("1_fxm1a")
 
 [node name="inventory" type="Area2D" parent="."]
 position = Vector2(400, 2.08165e-12)
@@ -20,11 +24,22 @@ position = Vector2(2.08165e-12, 30)
 rotation = -1.5708
 texture = ExtResource("2_38lsc")
 
-[node name="left" type="Sprite2D" parent="."]
-position = Vector2(50, 300)
-texture = ExtResource("2_38lsc")
-
 [node name="right" type="Sprite2D" parent="."]
 position = Vector2(750, 300)
 rotation = 3.14159
 texture = ExtResource("2_38lsc")
+
+[node name="leftArrow" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 259.0
+offset_right = 70.0
+offset_bottom = 339.0
+
+[node name="TextureRect" type="TextureRect" parent="leftArrow"]
+material = SubResource("CanvasItemMaterial_4kk0n")
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 80.0
+texture = ExtResource("2_38lsc")
+
+[connection signal="pressed" from="leftArrow" to="." method="_on_button_pressed"]

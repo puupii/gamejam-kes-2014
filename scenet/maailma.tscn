@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://w26oead5jqrr"]
+[gd_scene load_steps=7 format=3 uid="uid://w26oead5jqrr"]
 
 [ext_resource type="Script" path="res://scriptit/maailma.gd" id="1_4lfmi"]
 [ext_resource type="PackedScene" uid="uid://cul4v4qwqc6fq" path="res://scenet/etunakyma.tscn" id="1_lghj3"]
 [ext_resource type="PackedScene" uid="uid://du427aysdsc07" path="res://scenet/lepotila_nakyma.tscn" id="1_mppf7"]
 [ext_resource type="PackedScene" uid="uid://dkxrsbcksopxr" path="res://scenet/kuskinpuolen_nakyma.tscn" id="2_grlra"]
 [ext_resource type="PackedScene" uid="uid://y4kepeohasxw" path="res://scenet/apukuskinpuolen_nakyma.tscn" id="3_gvo7r"]
+[ext_resource type="PackedScene" uid="uid://mhwth5i51www" path="res://scenet/ui.tscn" id="6_rikpe"]
 
-[node name="Maailma" type="Node2D"]
+[node name="maailma" type="Node2D"]
 script = ExtResource("1_4lfmi")
 
 [node name="LepotilaNakyma" parent="." instance=ExtResource("1_mppf7")]
@@ -16,3 +17,5 @@ script = ExtResource("1_4lfmi")
 [node name="ApukuskinpuolenNakyma" parent="." instance=ExtResource("3_gvo7r")]
 
 [node name="KuskinpuolenNakyma" parent="." instance=ExtResource("2_grlra")]
+
+[node name="UI" parent="." instance=ExtResource("6_rikpe")]
