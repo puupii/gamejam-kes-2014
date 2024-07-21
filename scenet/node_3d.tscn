@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgsrk750rvpyx"]
+[gd_scene load_steps=10 format=3 uid="uid://dgsrk750rvpyx"]
 
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_pdxdr"]
 [ext_resource type="Script" path="res://scriptit/OhjaamoView.gd" id="2_o0hu1"]
 [ext_resource type="PackedScene" uid="uid://b5ru01f8507vq" path="res://scenet/node_2d.tscn" id="3_xwp8i"]
+[ext_resource type="PackedScene" uid="uid://bbdw74gk7nikd" path="res://scenet/tie.tscn" id="4_h0avk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vrej"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,3 +45,5 @@ position = Vector2(36, 152)
 
 [node name="Camera3D" type="Camera3D" parent="OhjaamoView"]
 transform = Transform3D(0.2, -4.70255e-09, -6.44262e-10, 4.73117e-09, 0.199688, 0.0111713, 3.80585e-10, -0.0111713, 0.199688, 1.29956e-07, -0.735984, 1.36021)
+
+[node name="Node3D" parent="." instance=ExtResource("4_h0avk")]
