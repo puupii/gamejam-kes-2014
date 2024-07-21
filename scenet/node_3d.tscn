@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgsrk750rvpyx"]
+[gd_scene load_steps=13 format=3 uid="uid://dgsrk750rvpyx"]
 
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_pdxdr"]
 [ext_resource type="Script" path="res://scriptit/OhjaamoView.gd" id="2_o0hu1"]
-[ext_resource type="PackedScene" uid="uid://b5ru01f8507vq" path="res://scenet/node_2d.tscn" id="3_xwp8i"]
 [ext_resource type="Script" path="res://scriptit/Camera3D.gd" id="4_5v1hq"]
 [ext_resource type="PackedScene" uid="uid://bbdw74gk7nikd" path="res://scenet/tie.tscn" id="4_h0avk"]
 [ext_resource type="Texture2D" uid="uid://b02jlnljify7j" path="res://assets/grafiikka/kuskinovi.jpg" id="5_h7hpd"]
@@ -47,16 +46,14 @@ mesh = SubResource("QuadMesh_l6hbu")
 surface_material_override/0 = SubResource("StandardMaterial3D_fa6gn")
 script = ExtResource("2_o0hu1")
 
-[node name="Node2D" parent="OhjaamoView" instance=ExtResource("3_xwp8i")]
-position = Vector2(15, 68)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="OhjaamoView"]
+transform = Transform3D(-1.72252e-07, 4.25072e-08, 4, 1.32745, 3.77331, 1.70656e-08, -3.77331, 1.32745, -1.76597e-07, -2.1303, -1.45824, 1.20859)
+mesh = SubResource("QuadMesh_cwihv")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8ajjc")
 
 [node name="Camera3D" type="Camera3D" parent="OhjaamoView"]
-transform = Transform3D(0.2, -4.70255e-09, -6.44262e-10, 4.73117e-09, 0.199688, 0.0111713, 3.80585e-10, -0.0111713, 0.199688, 1.29956e-07, -0.735984, 1.36021)
+transform = Transform3D(0.2, 1.47468e-05, -3.5479e-05, -1.2742e-05, 0.199688, 0.0111713, 3.62473e-05, -0.0111713, 0.199688, 1.25989e-06, -1.41009, 3.27637)
 script = ExtResource("4_5v1hq")
 
 [node name="Node3D" parent="." instance=ExtResource("4_h0avk")]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-8.74228e-07, 0, -20, 0, 20, 0, 20, 0, -8.74228e-07, 10.6515, 1.7019, -11.0619)
-mesh = SubResource("QuadMesh_cwihv")
-surface_material_override/0 = SubResource("StandardMaterial3D_8ajjc")
