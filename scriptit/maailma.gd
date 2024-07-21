@@ -14,11 +14,23 @@ func _ready():
 func _process(delta):
     pass
 
-func vaihdaNakymaVasen():
+func _on_left_arrow_pressed():
     if nykyinenNakyma == "etu":
         nykyinenNakyma = "vasen"
         $Etunakyma.hide()
         $KuskinpuolenNakyma.show()
-    
-func vaihdaNakymaOikea():
-    pass
+        
+    elif nykyinenNakyma == "vasen":
+        nykyinenNakyma = "taka"
+        $KuskinpuolenNakyma.hide()
+        $LepotilaNakyma.show()
+        
+    elif nykyinenNakyma == "taka":
+        nykyinenNakyma = "oikea"
+        $LepotilaNakyma.hide()
+        $ApukuskinpuolenNakyma.show()
+        
+    else:
+        nykyinenNakyma = "etu"
+        $ApukuskinpuolenNakyma.hide()
+        $Etunakyma.show()
