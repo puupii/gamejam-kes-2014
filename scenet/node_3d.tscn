@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgsrk750rvpyx"]
+[gd_scene load_steps=14 format=3 uid="uid://dgsrk750rvpyx"]
 
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_pdxdr"]
 [ext_resource type="Script" path="res://scriptit/OhjaamoView.gd" id="2_o0hu1"]
 [ext_resource type="PackedScene" uid="uid://b5ru01f8507vq" path="res://scenet/node_2d.tscn" id="3_xwp8i"]
+[ext_resource type="Script" path="res://scriptit/Camera3D.gd" id="4_5v1hq"]
 [ext_resource type="PackedScene" uid="uid://bbdw74gk7nikd" path="res://scenet/tie.tscn" id="4_h0avk"]
+[ext_resource type="Texture2D" uid="uid://b02jlnljify7j" path="res://assets/grafiikka/kuskinovi.jpg" id="5_h7hpd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vrej"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,6 +27,11 @@ size = Vector2(3.2, 2.4)
 transparency = 1
 albedo_texture = ExtResource("1_pdxdr")
 
+[sub_resource type="QuadMesh" id="QuadMesh_cwihv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ajjc"]
+albedo_texture = ExtResource("5_h7hpd")
+
 [node name="EtupaneeliNakyma" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -41,9 +48,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fa6gn")
 script = ExtResource("2_o0hu1")
 
 [node name="Node2D" parent="OhjaamoView" instance=ExtResource("3_xwp8i")]
-position = Vector2(36, 152)
+position = Vector2(15, 68)
 
 [node name="Camera3D" type="Camera3D" parent="OhjaamoView"]
 transform = Transform3D(0.2, -4.70255e-09, -6.44262e-10, 4.73117e-09, 0.199688, 0.0111713, 3.80585e-10, -0.0111713, 0.199688, 1.29956e-07, -0.735984, 1.36021)
+script = ExtResource("4_5v1hq")
 
 [node name="Node3D" parent="." instance=ExtResource("4_h0avk")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-07, 0, -20, 0, 20, 0, 20, 0, -8.74228e-07, 10.6515, 1.7019, -11.0619)
+mesh = SubResource("QuadMesh_cwihv")
+surface_material_override/0 = SubResource("StandardMaterial3D_8ajjc")
