@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://dkxrsbcksopxr"]
+[gd_scene load_steps=2 format=3 uid="uid://dkxrsbcksopxr"]
+
+[ext_resource type="Texture2D" uid="uid://b02jlnljify7j" path="res://assets/grafiikka/kuskinovi.jpg" id="1_ureds"]
 
 [node name="KuskinpuolenNakyma" type="Node2D"]
+
+[node name="Kuskinovi" type="Sprite2D" parent="."]
+position = Vector2(434, 298)
+texture = ExtResource("1_ureds")

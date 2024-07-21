@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://du427aysdsc07"]
+[gd_scene load_steps=2 format=3 uid="uid://du427aysdsc07"]
+
+[ext_resource type="Texture2D" uid="uid://c3imu15lbxqtc" path="res://assets/grafiikka/keittiö.jpg" id="1_n4eti"]
 
 [node name="LepotilaNakyma" type="Node2D"]
+
+[node name="Keittiö" type="Sprite2D" parent="."]
+position = Vector2(406, 278)
+texture = ExtResource("1_n4eti")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gamejam kesä2014"
-run/main_scene="res://scenet/etunakyma.tscn"
+run/main_scene="res://scenet/maailma.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
