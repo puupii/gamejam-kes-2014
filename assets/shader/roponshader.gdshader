@@ -1,11 +1,11 @@
 shader_type canvas_item;
 
 uniform sampler2D noise;
-uniform float offset;
+uniform vec2 offset;
 uniform vec2 tiling = vec2(1.0,1.0);
 
 void vertex() {
-	  VERTEX += UV.y*vec2(sin(TIME*1.88)*9.4, tan(TIME/10.0)/1.8);
+	  VERTEX += UV.y*vec2(sin(TIME*1.88)*9.4, tan(TIME/160.0)/1.8);
 	// Called for every vertex the material is visible on.
 }
 
@@ -17,14 +17,11 @@ void fragment() {
 	float angle = atan(baseuv.y,baseuv.x);
 	float dist = length(vec2(baseuv.x,baseuv.y));
 	vec2 polaruv = vec2(angle,dist);
-	polaruv *= polaruv*tiling+offset;
+	polaruv *= polaruv*tiling+offset*-TIME;
 	vec2 noise_uv = polaruv;
-	float noisee = texture(noise,noise_uv).a*tan(TIME*polaruv.x*polaruv.y+112.2);
+	float noisee = texture(noise,noise_uv).a*tan(-TIME*polaruv.x*polaruv.y+112.2);
 	vec2 shadow = baseuv*0.5;
-	COLOR.a=COLOR.a*sin(baseuv.x*6.7*polaruv.y)/sin(TIME*COLOR.a)*noisee;
-	COLOR.rgb = COLOR.rgb*texture(noise,noise_uv).rgb+min(vec3(0.09,0.08,0.11)*sin(TIME+8.7),vec3(0.12,0.10,0.23)*cos(TIME));
-	
-	_TEXTURE
+	COLOR.a=COLOR.a*sin(TIME)*tan(baseuv.x*6.7*polaruv.y*TIME+1101.9)/sin(800.9-TIME*COLOR.a)*noisee;
 	// Called for every pixel the material is visible on.
 }
 
