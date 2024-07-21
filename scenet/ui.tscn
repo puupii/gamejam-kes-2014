@@ -11,6 +11,7 @@ script = ExtResource("1_fxm1a")
 
 [node name="inventory" type="Area2D" parent="."]
 position = Vector2(400, 2.08165e-12)
+script = ExtResource("1_pyhqx")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="inventory"]
 polygon = PackedVector2Array(-200, 2.08165e-12, 2.08165e-12, 50, 200, 2.08165e-12, 300, -200, -300, -200)
