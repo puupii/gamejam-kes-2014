@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cul4v4qwqc6fq"]
+[gd_scene load_steps=3 format=3 uid="uid://cul4v4qwqc6fq"]
 
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_y4oiq"]
+[ext_resource type="Script" path="res://scriptit/Hytti.gd" id="2_30y8a"]
 
 [node name="Etunakyma" type="Node2D"]
 
 [node name="Hytti" type="Sprite2D" parent="."]
 position = Vector2(393, 310)
 texture = ExtResource("1_y4oiq")
+script = ExtResource("2_30y8a")

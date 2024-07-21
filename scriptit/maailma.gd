@@ -34,3 +34,25 @@ func _on_left_arrow_pressed():
         nykyinenNakyma = "etu"
         $ApukuskinpuolenNakyma.hide()
         $Etunakyma.show()
+
+
+func _on_right_arrow_pressed():
+    if nykyinenNakyma == "etu":
+        nykyinenNakyma = "oikea"
+        $Etunakyma.hide()
+        $ApukuskinpuolenNakyma.show()
+        
+    elif nykyinenNakyma == "oikea":
+        nykyinenNakyma = "taka"
+        $ApukuskinpuolenNakyma.hide()
+        $LepotilaNakyma.show()
+        
+    elif nykyinenNakyma == "taka":
+        nykyinenNakyma = "vasen"
+        $LepotilaNakyma.hide()
+        $KuskinpuolenNakyma.show()
+        
+    else:
+        nykyinenNakyma = "etu"
+        $KuskinpuolenNakyma.hide()
+        $Etunakyma.show()
