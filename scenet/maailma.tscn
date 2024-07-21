@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://w26oead5jqrr"]
+[gd_scene load_steps=12 format=3 uid="uid://w26oead5jqrr"]
 
 [ext_resource type="Script" path="res://scriptit/maailma.gd" id="1_4lfmi"]
 [ext_resource type="PackedScene" uid="uid://cul4v4qwqc6fq" path="res://scenet/etunakyma.tscn" id="1_lghj3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scriptit/ui.gd" id="6_hjyou"]
 [ext_resource type="Texture2D" uid="uid://b44cmgndh342c" path="res://assets/grafiikka/inventory.png" id="7_bwx3d"]
 [ext_resource type="Texture2D" uid="uid://yrf3p78wbngn" path="res://assets/grafiikka/arrow.png" id="8_khiiw"]
+[ext_resource type="AudioStream" uid="uid://0vy4g4wxwk03" path="res://assets/aanet/big-truck-engine-64992.mp3" id="9_ndmp0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jp2df"]
 
@@ -72,6 +73,10 @@ offset_right = 57.0
 offset_bottom = 81.0
 texture = ExtResource("8_khiiw")
 flip_h = true
+
+[node name="rekanÄäni" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ndmp0")
+autoplay = true
 
 [connection signal="pressed" from="UI/leftArrow" to="." method="_on_left_arrow_pressed"]
 [connection signal="pressed" from="UI/rightArrow" to="." method="_on_right_arrow_pressed"]
