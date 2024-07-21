@@ -12,4 +12,4 @@ func _process(delta):
 
 func _input(event):
     if Input.is_key_pressed(KEY_E):
-        rotate_y(0.1)
+        rotate_y(PI*0.5)

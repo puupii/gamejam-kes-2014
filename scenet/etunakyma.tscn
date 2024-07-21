@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cul4v4qwqc6fq"]
+
+[ext_resource type="Texture2D" uid="uid://eslfm6b54r80" path="res://assets/grafiikka/hytti.jpg" id="1_c2ghd"]
+
+[node name="Etunakyma" type="Node2D"]
+
+[node name="Hytti" type="Sprite2D" parent="."]
+position = Vector2(402, 313)
+texture = ExtResource("1_c2ghd")
