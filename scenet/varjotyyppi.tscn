@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt6csokabb6ct"]
+
+[ext_resource type="Shader" path="res://assets/shader/roponshader.gdshader" id="1_0lqhk"]
+[ext_resource type="Texture2D" uid="uid://0qa25x2fi72j" path="res://assets/shader/varjotyyppi.png" id="2_guohm"]
+[ext_resource type="Shader" path="res://assets/shader/varjotyyppi.gdshader" id="3_vhyy0"]
+[ext_resource type="Texture2D" uid="uid://bvf07gje2nunp" path="res://assets/shader/test.png" id="4_jrm7b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xjrvn"]
+shader = ExtResource("1_0lqhk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6gj3"]
+shader = ExtResource("3_vhyy0")
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00789034, -0.000439882)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xjrvn")
+position = Vector2(214, 179)
+texture = ExtResource("2_guohm")
+
+[node name="Test" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("ShaderMaterial_n6gj3")
+position = Vector2(-66, -100)
+texture = ExtResource("4_jrm7b")
