@@ -40,20 +40,20 @@ environment = SubResource("Environment_glhqf")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
+[node name="Node3D" parent="." instance=ExtResource("4_h0avk")]
+
 [node name="OhjaamoView" type="MeshInstance3D" parent="."]
-transform = Transform3D(-5, -9.38638e-08, 4.26917e-07, 5.31345e-08, 4.71664, 1.65932, -4.33872e-07, 1.65932, -4.71664, 0, 6.57446, -2.94172)
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 0, 6.57446, -2.94172)
 mesh = SubResource("QuadMesh_l6hbu")
 surface_material_override/0 = SubResource("StandardMaterial3D_fa6gn")
 script = ExtResource("2_o0hu1")
 
+[node name="Camera3D" type="Camera3D" parent="OhjaamoView"]
+transform = Transform3D(0.2, 1.47628e-05, -3.55232e-05, 1.14218e-08, 0.184663, 0.0768073, 3.84686e-05, -0.0768073, 0.184663, 4.27331e-07, -0.242869, 3.55864)
+script = ExtResource("4_5v1hq")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="OhjaamoView"]
-transform = Transform3D(-1.72252e-07, 4.25072e-08, 4, 1.32745, 3.77331, 1.70656e-08, -3.77331, 1.32745, -1.76597e-07, -2.1303, -1.45824, 1.20859)
+transform = Transform3D(7.66468e-07, -4.23673e-13, 4, -9.53674e-08, 4, -1.13687e-14, -4, -9.53674e-08, 7.66467e-07, -2.1303, -0.974511, 1.62403)
 mesh = SubResource("QuadMesh_cwihv")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8ajjc")
-
-[node name="Camera3D" type="Camera3D" parent="OhjaamoView"]
-transform = Transform3D(0.2, 1.47468e-05, -3.5479e-05, -1.2742e-05, 0.199688, 0.0111713, 3.62473e-05, -0.0111713, 0.199688, 1.25989e-06, -1.41009, 3.27637)
-script = ExtResource("4_5v1hq")
-
-[node name="Node3D" parent="." instance=ExtResource("4_h0avk")]
