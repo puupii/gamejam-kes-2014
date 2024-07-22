@@ -1,14 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt6csokabb6ct"]
+[gd_scene load_steps=8 format=3 uid="uid://dt6csokabb6ct"]
 
 [ext_resource type="Shader" path="res://assets/shader/roponshader.gdshader" id="1_0lqhk"]
 [ext_resource type="Texture2D" uid="uid://0qa25x2fi72j" path="res://assets/shader/varjotyyppi.png" id="2_guohm"]
+[ext_resource type="Texture2D" uid="uid://pc7teesthwqn" path="res://assets/shader/noise.png" id="2_uw88i"]
 [ext_resource type="Shader" path="res://assets/shader/varjotyyppi.gdshader" id="3_vhyy0"]
 [ext_resource type="Texture2D" uid="uid://bvf07gje2nunp" path="res://assets/shader/test.png" id="4_jrm7b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xjrvn"]
 shader = ExtResource("1_0lqhk")
-shader_parameter/offset = Vector2(2.08165e-12, 2.2)
-shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offset = Vector2(9, 6)
+shader_parameter/tiling = Vector2(12, 0.9)
+shader_parameter/noise = ExtResource("2_uw88i")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n6gj3"]
 shader = ExtResource("3_vhyy0")
