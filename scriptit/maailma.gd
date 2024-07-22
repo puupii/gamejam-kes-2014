@@ -1,7 +1,8 @@
 extends Node2D
 
 var nykyinenNakyma = "etu"
-
+var valittuKappale = Musiikki1
+var Musiikki1 = preload("res://assets/aanet/my-summer-truck-game.mp3")
 # Called when the node enters the scene tree for the first time.
 func _ready():
     pass # Replace with function body.
@@ -13,6 +14,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     pass
+
+################################################################################
+#################### kameran kääntäminen scenejen välillä ######################
+################################################################################
 
 func _on_left_arrow_pressed():
     if nykyinenNakyma == "etu":
@@ -56,3 +61,15 @@ func _on_right_arrow_pressed():
         nykyinenNakyma = "etu"
         $KuskinpuolenNakyma.hide()
         $Etunakyma.show()
+################################################################################
+
+################################################################################
+############################# Radion toiminta ##################################
+################################################################################
+func _on_radio_pressed():
+        $rekanÄäni.set_volume_db(-15.0)
+        #valittuKappale = Musiikki1
+        #$RadioSoitin.stream = valittuKappale
+        $RadioSoitin.play()
+    
+################################################################################

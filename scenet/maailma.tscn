@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://w26oead5jqrr"]
+[gd_scene load_steps=14 format=3 uid="uid://w26oead5jqrr"]
 
 [ext_resource type="Script" path="res://scriptit/maailma.gd" id="1_4lfmi"]
 [ext_resource type="PackedScene" uid="uid://cul4v4qwqc6fq" path="res://scenet/etunakyma.tscn" id="1_lghj3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b44cmgndh342c" path="res://assets/grafiikka/inventory.png" id="7_bwx3d"]
 [ext_resource type="Texture2D" uid="uid://yrf3p78wbngn" path="res://assets/grafiikka/arrow.png" id="8_khiiw"]
 [ext_resource type="AudioStream" uid="uid://0vy4g4wxwk03" path="res://assets/aanet/big-truck-engine-64992.mp3" id="9_ndmp0"]
+[ext_resource type="AudioStream" uid="uid://bundbmeiskq87" path="res://assets/aanet/my-summer-truck-game.mp3" id="11_hiysd"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jp2df"]
 
@@ -23,18 +24,18 @@ visible = false
 
 [node name="Etunakyma" parent="." instance=ExtResource("1_lghj3")]
 
-[node name="Button" type="Button" parent="Etunakyma"]
-offset_left = 340.0
-offset_top = 188.0
-offset_right = 424.0
-offset_bottom = 243.0
+[node name="Radio" type="Button" parent="Etunakyma"]
+offset_left = 338.0
+offset_top = 177.0
+offset_right = 422.0
+offset_bottom = 232.0
 
-[node name="TextureRect" type="TextureRect" parent="Etunakyma/Button"]
+[node name="RadioKuva" type="TextureRect" parent="Etunakyma/Radio"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = -1.0
-offset_right = 82.0
-offset_bottom = 59.0
+offset_left = 5.0
+offset_top = -4.0
+offset_right = 85.0
+offset_bottom = 56.0
 texture = ExtResource("4_k2cmv")
 
 [node name="ApukuskinpuolenNakyma" parent="." instance=ExtResource("3_gvo7r")]
@@ -94,7 +95,13 @@ flip_h = true
 
 [node name="rekanÄäni" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_ndmp0")
+volume_db = 1.0
 autoplay = true
 
+[node name="RadioSoitin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_hiysd")
+volume_db = 2.811
+
+[connection signal="pressed" from="Etunakyma/Radio" to="." method="_on_radio_pressed"]
 [connection signal="pressed" from="UI/leftArrow" to="." method="_on_left_arrow_pressed"]
 [connection signal="pressed" from="UI/rightArrow" to="." method="_on_right_arrow_pressed"]
