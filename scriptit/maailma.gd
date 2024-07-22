@@ -1,8 +1,6 @@
 extends Node2D
 
 var nykyinenNakyma = "etu"
-var valittuKappale = Musiikki1
-var Musiikki1 = preload("res://assets/aanet/my-summer-truck-game.mp3")
 # Called when the node enters the scene tree for the first time.
 func _ready():
     pass # Replace with function body.
