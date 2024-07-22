@@ -4,9 +4,9 @@ extends MeshInstance3D
 var rotation_speed = -20.0
 
 func _ready():
-    # Initialization if needed
-    pass
+	# Initialization if needed
+	pass
 
 func _process(delta):
-    # Rotate the cylinder around its Y axis
-    rotate_x(deg_to_rad(rotation_speed * delta))
+	# Rotate the cylinder around its Y axis
+	rotate_x(deg_to_rad(rotation_speed * delta))

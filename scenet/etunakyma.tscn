@@ -1,9 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://cul4v4qwqc6fq"]
+[gd_scene load_steps=9 format=3 uid="uid://cul4v4qwqc6fq"]
 
+[ext_resource type="Texture2D" uid="uid://caasft5y3w534" path="res://assets/grafiikka/tie.png" id="1_5kudm"]
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_y4oiq"]
 [ext_resource type="Script" path="res://scriptit/Hytti.gd" id="2_30y8a"]
+[ext_resource type="Texture2D" uid="uid://d4krcqw3vwul8" path="res://assets/grafiikka/tieviiva.png" id="2_b4vuv"]
+[ext_resource type="Script" path="res://scriptit/tieviiva.gd" id="3_7a706"]
+[ext_resource type="Texture2D" uid="uid://djuj42u4io80j" path="res://assets/grafiikka/puska.png" id="4_rsxjs"]
+[ext_resource type="Script" path="res://scriptit/puska2.gd" id="5_k4mbg"]
+[ext_resource type="Script" path="res://scriptit/puska1.gd" id="6_wohkl"]
 
 [node name="Etunakyma" type="Node2D"]
+
+[node name="tie" type="Sprite2D" parent="."]
+position = Vector2(386, 242)
+scale = Vector2(1, 0.474286)
+texture = ExtResource("1_5kudm")
+
+[node name="tieviiva" type="Sprite2D" parent="tie"]
+position = Vector2(-5, -340)
+rotation = 0.0349066
+scale = Vector2(0.5, 0.2)
+skew = 0.0872665
+texture = ExtResource("2_b4vuv")
+script = ExtResource("3_7a706")
+
+[node name="tieviiva2" type="Sprite2D" parent="tie"]
+position = Vector2(-59, 75.9036)
+rotation = 0.0349066
+skew = 0.0872665
+texture = ExtResource("2_b4vuv")
+script = ExtResource("3_7a706")
+
+[node name="puska2" type="Sprite2D" parent="."]
+position = Vector2(101, 84)
+texture = ExtResource("4_rsxjs")
+script = ExtResource("5_k4mbg")
+
+[node name="puska1" type="Sprite2D" parent="."]
+position = Vector2(885, 441)
+rotation = 0.523599
+skew = -0.279253
+texture = ExtResource("4_rsxjs")
+flip_h = true
+script = ExtResource("6_wohkl")
 
 [node name="Hytti" type="Sprite2D" parent="."]
 position = Vector2(393, 310)
