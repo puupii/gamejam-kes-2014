@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://w26oead5jqrr"]
+[gd_scene load_steps=13 format=3 uid="uid://w26oead5jqrr"]
 
 [ext_resource type="Script" path="res://scriptit/maailma.gd" id="1_4lfmi"]
 [ext_resource type="PackedScene" uid="uid://cul4v4qwqc6fq" path="res://scenet/etunakyma.tscn" id="1_lghj3"]
 [ext_resource type="PackedScene" uid="uid://du427aysdsc07" path="res://scenet/lepotila_nakyma.tscn" id="1_mppf7"]
-[ext_resource type="PackedScene" path="res://scenet/kuskinpuolen_nakyma.tscn" id="2_grlra"]
-[ext_resource type="PackedScene" path="res://scenet/apukuskinpuolen_nakyma.tscn" id="3_gvo7r"]
+[ext_resource type="PackedScene" uid="uid://dkxrsbcksopxr" path="res://scenet/kuskinpuolen_nakyma.tscn" id="2_grlra"]
+[ext_resource type="PackedScene" uid="uid://y4kepeohasxw" path="res://scenet/apukuskinpuolen_nakyma.tscn" id="3_gvo7r"]
+[ext_resource type="Texture2D" uid="uid://cl2k5phpc8d8n" path="res://assets/grafiikka/radio.png" id="4_k2cmv"]
 [ext_resource type="Script" path="res://scriptit/ui.gd" id="6_hjyou"]
 [ext_resource type="Texture2D" uid="uid://b44cmgndh342c" path="res://assets/grafiikka/inventory.png" id="7_bwx3d"]
 [ext_resource type="Texture2D" uid="uid://yrf3p78wbngn" path="res://assets/grafiikka/arrow.png" id="8_khiiw"]
@@ -18,12 +19,29 @@
 script = ExtResource("1_4lfmi")
 
 [node name="LepotilaNakyma" parent="." instance=ExtResource("1_mppf7")]
+visible = false
 
 [node name="Etunakyma" parent="." instance=ExtResource("1_lghj3")]
 
+[node name="Button" type="Button" parent="Etunakyma"]
+offset_left = 340.0
+offset_top = 188.0
+offset_right = 424.0
+offset_bottom = 243.0
+
+[node name="TextureRect" type="TextureRect" parent="Etunakyma/Button"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 82.0
+offset_bottom = 59.0
+texture = ExtResource("4_k2cmv")
+
 [node name="ApukuskinpuolenNakyma" parent="." instance=ExtResource("3_gvo7r")]
+visible = false
 
 [node name="KuskinpuolenNakyma" parent="." instance=ExtResource("2_grlra")]
+visible = false
 
 [node name="UI" type="Node2D" parent="."]
 script = ExtResource("6_hjyou")

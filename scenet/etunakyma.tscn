@@ -45,6 +45,6 @@ flip_h = true
 script = ExtResource("6_wohkl")
 
 [node name="Hytti" type="Sprite2D" parent="."]
-position = Vector2(393, 310)
+position = Vector2(399, 296)
 texture = ExtResource("1_y4oiq")
 script = ExtResource("2_30y8a")
