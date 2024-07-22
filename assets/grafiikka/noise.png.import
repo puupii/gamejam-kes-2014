@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0qa25x2fi72j"
-path="res://.godot/imported/varjotyyppi.png-8020b5a5833df82f34ad412e6322ef2c.ctex"
+uid="uid://pc7teesthwqn"
+path="res://.godot/imported/noise.png-22a53d8aba79ce0adfbe16b5c419bab7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shader/varjotyyppi.png"
-dest_files=["res://.godot/imported/varjotyyppi.png-8020b5a5833df82f34ad412e6322ef2c.ctex"]
+source_file="res://assets/grafiikka/noise.png"
+dest_files=["res://.godot/imported/noise.png-22a53d8aba79ce0adfbe16b5c419bab7.ctex"]
 
 [params]
 
