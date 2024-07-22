@@ -65,9 +65,13 @@ func _on_right_arrow_pressed():
 ############################# Radion toiminta ##################################
 ################################################################################
 func _on_radio_pressed():
-        $rekanÄäni.set_volume_db(-15.0)
-        #valittuKappale = Musiikki1
-        #$RadioSoitin.stream = valittuKappale
-        $RadioSoitin.play()
-    
+        if $RadioSoitin.is_playing() != true:
+            $rekanÄäni.set_volume_db(-15.0)
+            #valittuKappale = Musiikki1
+            #$RadioSoitin.stream = valittuKappale
+            $RadioSoitin.play()
+        
+        elif $RadioSoitin.is_playing() == true:
+            $RadioSoitin.stop()
+            $rekanÄäni.set_volume_db(1.0)
 ################################################################################
