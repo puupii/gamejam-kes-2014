@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cul4v4qwqc6fq"]
+[gd_scene load_steps=11 format=3 uid="uid://cul4v4qwqc6fq"]
 
 [ext_resource type="Texture2D" uid="uid://caasft5y3w534" path="res://assets/grafiikka/tie.png" id="1_5kudm"]
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_y4oiq"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://djuj42u4io80j" path="res://assets/grafiikka/puska.png" id="4_rsxjs"]
 [ext_resource type="Script" path="res://scriptit/puska2.gd" id="5_k4mbg"]
 [ext_resource type="Script" path="res://scriptit/puska1.gd" id="6_wohkl"]
+[ext_resource type="Texture2D" uid="uid://cl2k5phpc8d8n" path="res://assets/grafiikka/radio.png" id="9_ls20p"]
+[ext_resource type="AudioStream" uid="uid://bundbmeiskq87" path="res://assets/aanet/my-summer-truck-game.mp3" id="10_itp5v"]
 
 [node name="Etunakyma" type="Node2D"]
 
@@ -48,3 +50,24 @@ script = ExtResource("6_wohkl")
 position = Vector2(399, 296)
 texture = ExtResource("1_y4oiq")
 script = ExtResource("2_30y8a")
+
+[node name="Radio" type="Button" parent="Hytti"]
+offset_left = -61.0
+offset_top = -119.0
+offset_right = 23.0
+offset_bottom = -64.0
+
+[node name="RadioKuva" type="TextureRect" parent="Hytti/Radio"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -4.0
+offset_right = 85.0
+offset_bottom = 56.0
+texture = ExtResource("9_ls20p")
+
+[node name="RadioSoitin" type="AudioStreamPlayer2D" parent="Hytti"]
+stream = ExtResource("10_itp5v")
+volume_db = 2.811
+bus = &"radio"
+
+[connection signal="pressed" from="Hytti/Radio" to="Hytti" method="_on_radio_pressed"]
