@@ -1,6 +1,7 @@
 extends Node2D
 
 var nykyinenNakyma = "etu"
+var ekakerta = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,6 +21,10 @@ func _process(delta):
 func _on_left_arrow_pressed():
 	if nykyinenNakyma == "etu":
 		nykyinenNakyma = "vasen"
+		if ekakerta == true:
+			ekakerta = false
+			var volume = 0.0
+			AudioServer.set_bus_volume_db(3, volume)
 		$Etunakyma.hide()
 		$KuskinpuolenNakyma.show()
 		
@@ -52,6 +57,10 @@ func _on_right_arrow_pressed():
 		
 	elif nykyinenNakyma == "taka":
 		nykyinenNakyma = "vasen"
+		if ekakerta == true:
+			ekakerta = false
+			var volume = 0.0
+			AudioServer.set_bus_volume_db(3, volume)
 		$LepotilaNakyma.hide()
 		$KuskinpuolenNakyma.show()
 		

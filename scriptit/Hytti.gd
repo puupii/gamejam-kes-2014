@@ -24,6 +24,8 @@ func _process(delta):
 		
 	#radio sammuu automaattisesti 30sec kuluttua
 	if radiotimer < 0.0:
+		AudioServer.set_bus_volume_db(3,-3.0)
+		AudioServer.set_bus_volume_db(1,-5.0)
 		AudioServer.set_bus_mute(2, true)
 	if radiotimer > 0.0:
 		radiotimer -= delta
@@ -35,6 +37,7 @@ func _process(delta):
 func _on_radio_pressed():
 		if $RadioSoitin.is_playing() != true:
 			AudioServer.set_bus_volume_db(1,-8.0)
+			AudioServer.set_bus_volume_db(3,-8.0)
 			AudioServer.set_bus_mute(2, false)
 			radiotimer = 30.0
 			#valittuKappale = Musiikki1
@@ -45,5 +48,6 @@ func _on_radio_pressed():
 			radiotimer = 0
 			AudioServer.set_bus_mute(2, true)
 			$RadioSoitin.stop()
-			AudioServer.set_bus_volume_db(1,0.0)
+			AudioServer.set_bus_volume_db(3,-3.0)
+			AudioServer.set_bus_volume_db(1,-5.0)
 ################################################################################

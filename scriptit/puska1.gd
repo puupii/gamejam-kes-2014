@@ -10,6 +10,6 @@ func _ready():
 func _process(delta):
 	if position.y > 350:
 		position = Vector2(660,80)
-		scale = Vector2(0.5,0.2)
+		scale = Vector2(0.5,0.5)
 	scale = scale.lerp(Vector2(1,1),2.5*delta)
 	position = position.lerp(Vector2(880,440),.3*delta)
