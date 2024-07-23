@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkxrsbcksopxr"]
+[gd_scene load_steps=3 format=3 uid="uid://cjixlnj2d75kx"]
 
 [ext_resource type="Texture2D" uid="uid://b02jlnljify7j" path="res://assets/grafiikka/kuskinovi.jpg" id="1_ureds"]
+[ext_resource type="PackedScene" uid="uid://dt6csokabb6ct" path="res://scenet/varjotyyppi.tscn" id="2_xh4wv"]
 
 [node name="KuskinpuolenNakyma" type="Node2D"]
 
 [node name="Kuskinovi" type="Sprite2D" parent="."]
 position = Vector2(434, 298)
 texture = ExtResource("1_ureds")
+
+[node name="varjotyyppi" parent="Kuskinovi" instance=ExtResource("2_xh4wv")]
+position = Vector2(-120, -120)
