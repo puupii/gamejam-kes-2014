@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://w26oead5jqrr"]
+[gd_scene load_steps=14 format=3 uid="uid://w26oead5jqrr"]
 
 [ext_resource type="Script" path="res://scriptit/maailma.gd" id="1_4lfmi"]
 [ext_resource type="PackedScene" uid="uid://cul4v4qwqc6fq" path="res://scenet/etunakyma.tscn" id="1_lghj3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenet/apukuskinpuolen_nakyma.tscn" id="3_gvo7r"]
 [ext_resource type="Script" path="res://scriptit/ui.gd" id="6_hjyou"]
 [ext_resource type="Texture2D" uid="uid://b44cmgndh342c" path="res://assets/grafiikka/inventory.png" id="7_bwx3d"]
+[ext_resource type="Texture2D" uid="uid://ygdyeji1d6ie" path="res://assets/grafiikka/akku.png" id="8_132dn"]
 [ext_resource type="Texture2D" uid="uid://yrf3p78wbngn" path="res://assets/grafiikka/arrow.png" id="8_khiiw"]
 [ext_resource type="AudioStream" uid="uid://0vy4g4wxwk03" path="res://assets/aanet/big-truck-engine-64992.mp3" id="9_ndmp0"]
 
@@ -46,6 +47,39 @@ shape = SubResource("RectangleShape2D_57rrc")
 [node name="Inventory" type="Sprite2D" parent="UI/inventory/inventory"]
 position = Vector2(2.08165e-12, -75)
 texture = ExtResource("7_bwx3d")
+
+[node name="itemslot1" type="Sprite2D" parent="UI/inventory/inventory/Inventory"]
+position = Vector2(-220, 30)
+texture = ExtResource("8_132dn")
+
+[node name="itemslot2" type="Sprite2D" parent="UI/inventory/inventory/Inventory"]
+position = Vector2(-140, 30)
+texture = ExtResource("8_132dn")
+
+[node name="itemslot3" type="Sprite2D" parent="UI/inventory/inventory/Inventory"]
+position = Vector2(-50, 30)
+texture = ExtResource("8_132dn")
+
+[node name="itemslot4" type="Sprite2D" parent="UI/inventory/inventory/Inventory"]
+position = Vector2(50, 30)
+texture = ExtResource("8_132dn")
+
+[node name="itemslot5" type="Sprite2D" parent="UI/inventory/inventory/Inventory"]
+position = Vector2(130, 30)
+texture = ExtResource("8_132dn")
+
+[node name="itemslot6" type="Sprite2D" parent="UI/inventory/inventory/Inventory"]
+position = Vector2(220, 30)
+texture = ExtResource("8_132dn")
+
+[node name="itemslot7" type="Sprite2D" parent="UI/inventory/inventory/Inventory"]
+position = Vector2(-50, -30)
+
+[node name="itemslot8" type="Sprite2D" parent="UI/inventory/inventory/Inventory"]
+position = Vector2(50, -30)
+
+[node name="itemslot9" type="Sprite2D" parent="UI/inventory/inventory/Inventory"]
+position = Vector2(120, -30)
 
 [node name="leftArrow" type="Button" parent="UI"]
 offset_left = 20.0
