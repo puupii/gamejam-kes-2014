@@ -1,5 +1,7 @@
 extends Sprite2D
 
+var p1
+var p2
 var kahvipannuFound = false
 
 
@@ -10,7 +12,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    pass
+    if kahvipannuFound:
+        p1 = $kahvipannu.position.lerp(Vector2(0,0),0.5)
+        p2 = p1.lerp(Vector2(0,-700),1.5)
+        $kahvipannu.position = $kahvipannu.position.lerp(p2,0.2*delta)
 
 
 ################################################################################
@@ -20,7 +25,6 @@ func _process(delta):
 
 ############################### PANNU ##########################################
 func _on_kahvipannu_pressed():
-    $kahvipannu.hide()
     kahvipannuFound = true
     
 func _on_kaapin_ovi_pressed():
