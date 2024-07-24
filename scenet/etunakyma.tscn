@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cul4v4qwqc6fq"]
+[gd_scene load_steps=13 format=3 uid="uid://cul4v4qwqc6fq"]
 
 [ext_resource type="Texture2D" uid="uid://caasft5y3w534" path="res://assets/grafiikka/tie.png" id="1_5kudm"]
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_y4oiq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cl2k5phpc8d8n" path="res://assets/grafiikka/radio.png" id="9_ls20p"]
 [ext_resource type="AudioStream" uid="uid://bundbmeiskq87" path="res://assets/aanet/my-summer-truck-game.mp3" id="10_itp5v"]
 [ext_resource type="Texture2D" uid="uid://ygdyeji1d6ie" path="res://assets/grafiikka/akku.png" id="11_p8s23"]
+[ext_resource type="Texture2D" uid="uid://oym8mvipnuo2" path="res://assets/grafiikka/kassi.png" id="13_b13p8"]
 
 [node name="Etunakyma" type="Node2D"]
 
@@ -72,19 +73,37 @@ volume_db = 2.811
 bus = &"radio"
 
 [node name="akku" type="Sprite2D" parent="Hytti"]
-position = Vector2(273, 39)
+position = Vector2(230, 163)
 texture = ExtResource("11_p8s23")
 
 [node name="Button" type="Button" parent="Hytti/akku"]
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -70.0
+offset_left = -37.0
+offset_top = -66.0
+offset_right = -2.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+flat = true
+
+[node name="kassi" type="Button" parent="Hytti"]
+offset_left = 188.0
+offset_top = 125.0
+offset_right = 276.0
+offset_bottom = 210.0
+flat = true
+
+[node name="kuvake" type="TextureRect" parent="Hytti/kassi"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -7.0
+offset_right = 123.0
+offset_bottom = 90.0
+texture = ExtResource("13_b13p8")
 
 [connection signal="pressed" from="Hytti/Radio" to="Hytti" method="_on_radio_pressed"]
 [connection signal="pressed" from="Hytti/akku/Button" to="Hytti" method="_on_akku_pressed"]
+[connection signal="pressed" from="Hytti/kassi" to="Hytti" method="_on_kassi_pressed"]

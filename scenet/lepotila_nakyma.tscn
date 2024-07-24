@@ -1,9 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://du427aysdsc07"]
+[gd_scene load_steps=5 format=3 uid="uid://du427aysdsc07"]
 
 [ext_resource type="Texture2D" uid="uid://c3imu15lbxqtc" path="res://assets/grafiikka/keittiö.jpg" id="1_n4eti"]
+[ext_resource type="Script" path="res://scriptit/Keittiö.gd" id="2_l3if3"]
+[ext_resource type="Texture2D" uid="uid://dxf4pv7gwckuh" path="res://assets/grafiikka/pannu.png" id="3_njyyx"]
+[ext_resource type="Texture2D" uid="uid://bg8sx6lbxmwav" path="res://assets/grafiikka/kaapinOvi.png" id="4_oeodw"]
 
 [node name="LepotilaNakyma" type="Node2D"]
 
 [node name="Keittiö" type="Sprite2D" parent="."]
 position = Vector2(406, 278)
 texture = ExtResource("1_n4eti")
+script = ExtResource("2_l3if3")
+
+[node name="kahvipannu" type="Button" parent="Keittiö"]
+offset_left = -470.0
+offset_top = -101.0
+offset_right = -325.0
+offset_bottom = 21.0
+flat = true
+
+[node name="kuvake" type="TextureRect" parent="Keittiö/kahvipannu"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -8.0
+offset_right = 148.0
+offset_bottom = 121.0
+texture = ExtResource("3_njyyx")
+expand_mode = 1
+
+[node name="kaapinOvi" type="Button" parent="Keittiö"]
+offset_left = -494.0
+offset_top = -226.0
+offset_right = -311.0
+offset_bottom = 43.0
+flat = true
+
+[node name="kuvake" type="TextureRect" parent="Keittiö/kaapinOvi"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.875
+anchor_top = 2.875
+anchor_right = -2.875
+anchor_bottom = 2.875
+offset_left = 530.125
+offset_top = -767.375
+offset_right = 703.125
+offset_bottom = -512.375
+texture = ExtResource("4_oeodw")
+
+[connection signal="pressed" from="Keittiö/kahvipannu" to="Keittiö" method="_on_kahvipannu_pressed"]
+[connection signal="pressed" from="Keittiö/kaapinOvi" to="Keittiö" method="_on_kaapin_ovi_pressed"]

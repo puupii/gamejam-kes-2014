@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cul4v4qwqc6fq" path="res://scenet/etunakyma.tscn" id="1_lghj3"]
 [ext_resource type="PackedScene" uid="uid://du427aysdsc07" path="res://scenet/lepotila_nakyma.tscn" id="1_mppf7"]
 [ext_resource type="PackedScene" uid="uid://cjixlnj2d75kx" path="res://scenet/kuskinpuolen_nakyma.tscn" id="2_grlra"]
-[ext_resource type="PackedScene" path="res://scenet/apukuskinpuolen_nakyma.tscn" id="3_gvo7r"]
+[ext_resource type="PackedScene" uid="uid://y4kepeohasxw" path="res://scenet/apukuskinpuolen_nakyma.tscn" id="3_gvo7r"]
 [ext_resource type="Script" path="res://scriptit/ui.gd" id="6_hjyou"]
 [ext_resource type="Texture2D" uid="uid://b44cmgndh342c" path="res://assets/grafiikka/inventory.png" id="7_bwx3d"]
 [ext_resource type="Texture2D" uid="uid://ygdyeji1d6ie" path="res://assets/grafiikka/akku.png" id="8_132dn"]
