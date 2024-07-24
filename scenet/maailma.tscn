@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://w26oead5jqrr"]
+[gd_scene load_steps=14 format=3 uid="uid://w26oead5jqrr"]
 
 [ext_resource type="Script" path="res://scriptit/maailma.gd" id="1_4lfmi"]
 [ext_resource type="PackedScene" uid="uid://cul4v4qwqc6fq" path="res://scenet/etunakyma.tscn" id="1_lghj3"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ygdyeji1d6ie" path="res://assets/grafiikka/akku.png" id="8_132dn"]
 [ext_resource type="Texture2D" uid="uid://yrf3p78wbngn" path="res://assets/grafiikka/arrow.png" id="8_khiiw"]
 [ext_resource type="AudioStream" uid="uid://0vy4g4wxwk03" path="res://assets/aanet/big-truck-engine-64992.mp3" id="9_ndmp0"]
-[ext_resource type="Texture2D" uid="uid://c5dkyanmoee48" path="res://assets/grafiikka/valo.png" id="11_eof8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57rrc"]
 size = Vector2(600, 200)
@@ -118,17 +117,6 @@ stream = ExtResource("9_ndmp0")
 volume_db = 1.0
 autoplay = true
 bus = &"rekan pörinä"
-
-[node name="RuudunPimennys" type="CanvasModulate" parent="."]
-color = Color(0.165656, 0.165656, 0.165656, 1)
-
-[node name="Node2D" type="Node2D" parent="RuudunPimennys"]
-
-[node name="PointLight2D" type="PointLight2D" parent="RuudunPimennys/Node2D"]
-position = Vector2(395, 566)
-color = Color(1, 1, 0.807843, 1)
-texture = ExtResource("11_eof8j")
-texture_scale = 1.9
 
 [connection signal="mouse_entered" from="UI/inventory/inventory" to="UI/inventory" method="_on_inventory_mouse_entered"]
 [connection signal="mouse_exited" from="UI/inventory/inventory" to="UI/inventory" method="_on_inventory_mouse_exited"]

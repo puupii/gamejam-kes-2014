@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cul4v4qwqc6fq"]
+[gd_scene load_steps=14 format=3 uid="uid://cul4v4qwqc6fq"]
 
 [ext_resource type="Texture2D" uid="uid://caasft5y3w534" path="res://assets/grafiikka/tie.png" id="1_5kudm"]
 [ext_resource type="Texture2D" uid="uid://d1bhi765y4lfg" path="res://assets/grafiikka/hytti.png" id="1_y4oiq"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bundbmeiskq87" path="res://assets/aanet/my-summer-truck-game.mp3" id="10_itp5v"]
 [ext_resource type="Texture2D" uid="uid://ygdyeji1d6ie" path="res://assets/grafiikka/akku.png" id="11_p8s23"]
 [ext_resource type="Texture2D" uid="uid://oym8mvipnuo2" path="res://assets/grafiikka/kassi.png" id="13_b13p8"]
+[ext_resource type="Texture2D" uid="uid://c5dkyanmoee48" path="res://assets/grafiikka/valo.png" id="13_qrxst"]
 
 [node name="Etunakyma" type="Node2D"]
 
@@ -103,6 +104,18 @@ offset_top = -7.0
 offset_right = 123.0
 offset_bottom = 90.0
 texture = ExtResource("13_b13p8")
+
+[node name="RuudunPimennys" type="CanvasModulate" parent="."]
+color = Color(0.165656, 0.165656, 0.165656, 1)
+
+[node name="Node2D" type="Node2D" parent="RuudunPimennys"]
+
+[node name="PointLight2D" type="PointLight2D" parent="RuudunPimennys/Node2D"]
+position = Vector2(395, 566)
+scale = Vector2(0.998039, 0.945946)
+color = Color(1, 1, 0.807843, 1)
+texture = ExtResource("13_qrxst")
+texture_scale = 1.9
 
 [connection signal="pressed" from="Hytti/Radio" to="Hytti" method="_on_radio_pressed"]
 [connection signal="pressed" from="Hytti/akku/Button" to="Hytti" method="_on_akku_pressed"]
