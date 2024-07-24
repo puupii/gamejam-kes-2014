@@ -4,6 +4,9 @@ var heilunta = 0.0
 var kuopat
 var kuoppa
 var radiotimer
+var akkufound = false
+var p1
+var p2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	radiotimer = 0.0
@@ -29,6 +32,17 @@ func _process(delta):
 		AudioServer.set_bus_mute(2, true)
 	if radiotimer > 0.0:
 		radiotimer -= delta
+		
+		#akku lentää inventoryyn
+	if akkufound:
+		p1 = $akku.position.lerp(Vector2(0,0),0.5)
+		p2 = p1.lerp(Vector2(0,-700),1.5)
+		$akku.position = $akku.position.lerp(p2,0.2*delta)
+	
+	if $akku.position.y < -400:
+		if akkufound:
+			print("akku inventoryssä")
+		akkufound = false
 	
 
 ################################################################################
@@ -51,3 +65,9 @@ func _on_radio_pressed():
 			AudioServer.set_bus_volume_db(3,-3.0)
 			AudioServer.set_bus_volume_db(1,-5.0)
 ################################################################################
+
+
+func _on_akku_pressed():
+	$akku/Button.disabled = true
+	akkufound = true
+	pass # Replace with function body.
