@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 void vertex() {
-		  VERTEX += UV.y*vec2(sin(-TIME*2.58)*3.4, tan(TIME/6.0)/1.8);
+	VERTEX += UV.y*vec2(sin(-TIME*2.58)*3.4, tan(TIME/6.0)/1.8);
 	// Called for every vertex the material is visible on.
 }
 
